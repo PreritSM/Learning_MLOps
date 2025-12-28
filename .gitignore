@@ -1,1 +1,11 @@
-/**/*.onnx
+# Virtual environments
+packageonnx/
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Large model files
+*.onnx
+*.pth
+*.pt
