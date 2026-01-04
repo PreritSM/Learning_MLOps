@@ -40,4 +40,4 @@ jobs:
 
     - name: Run Tests
       run: |
-        pytest Practical_MLOps/Chapter1/tests/
+        pytest Practical_MLOps/Chapter1/tests/tests_main.py
