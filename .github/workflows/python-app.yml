@@ -1,0 +1,43 @@
+name: Python Package CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      # If one version fails, other jobs continue to run
+      fail-fast: false 
+      matrix:
+        # Define the versions you want to test
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        # Optional: Caches pip dependencies to speed up future runs
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install ruff pytest
+        # If you have a requirements file:
+        # pip install -r requirements.txt 
+
+    - name: Run Linting
+      run: |
+        # Using the tool we discussed earlier
+        ruff check . 
+
+    - name: Run Tests
+      run: |
+        pytest
