@@ -31,7 +31,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install ruff pytest
         # If you have a requirements file:
-        pip install -r requirements.txt 
+        pip install -r Practical_MLOps/Chapter1/requirements.txt 
 
     - name: Run Linting
       run: |
