@@ -1,4 +1,5 @@
 name: Python Package CI
+run-name: Python CI - CHP1 by {{ github.actor }}
 
 on:
   push:
