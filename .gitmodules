@@ -1,0 +1,3 @@
+[submodule "WineQuality_MLOPS"]
+	path = WineQuality_MLOPS
+	url = https://github.com/PreritSM/WineQuality_MLOPS.git
